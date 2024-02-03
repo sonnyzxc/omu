@@ -5,37 +5,18 @@ struct Page1: View {
     @State private var groupID: String = ""
     @State private var selectedSubjects: [String] = []
     @State private var isSubmitTapped: Bool = false
-    
-    let academicSubjects = ["Math", "Science", "English", "History", "Computer Science"]
-    
+
     var body: some View {
-        VStack{
-            List(academicSubjects, id: \.self) { subject in
-                Toggle(isOn: Binding(
-                    get: { selectedSubjects.contains(subject) },
-                    set: {
-                        if $0 {
-                            selectedSubjects.append(subject)
-                        } else {
-                            selectedSubjects.removeAll { $0 == subject }
-                        }
-                    }
-                )) {
-                    Text(subject)
-                }
-            }
-            .listStyle(InsetGroupedListStyle())
-            .padding()
-            
+        VStack {
             TextField(
                 "Group ID",
                 text: $groupID
             )
             .disableAutocorrection(true)
             .textFieldStyle(.roundedBorder)
-            .font(.system(size: 14)) // Adjust the size as needed
-            .frame(width: 200) // Adjust the width as needed
-            
+            .font(.system(size: 14))
+            .frame(width: 200)
+
             Button("Submit") {
                 // Handle the action when the submit button is tapped
                 // You can add your logic here
@@ -46,9 +27,9 @@ struct Page1: View {
             .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(8)
-            .frame(width: 200) // Adjust the width as needed
+            .frame(width: 200)
             .disabled(groupID.isEmpty)
-            
+
             NavigationLink(destination: Page2(groupID: groupID, selectedSubjects: selectedSubjects), isActive: $isSubmitTapped) {
                 EmptyView()
             }
@@ -61,33 +42,34 @@ struct Page1: View {
 struct Page2: View {
     var groupID: String
     var selectedSubjects: [String]
+    let triviaOfTheDay = "Learn to cook chicken pesto pasta!"
 
     var body: some View {
         VStack {
             Text("Group ID: \(groupID)")
                 .font(.headline)
                 .padding()
+            
+            Spacer()
+
+            Text("Task of the Day:")
+                .font(.headline)
+                .padding()
+
+            Text(triviaOfTheDay)
+                .padding(.leading)
+
+            Spacer()
+
+            NavigationLink(destination: CalendarView()) {
+                Image(systemName: "calendar")
+                    .imageScale(.large)
+                    .padding()
+                    .foregroundColor(.blue)
+            }
+            .padding(.trailing)
         }
         .navigationTitle("Dashboard")
-        
-        Text("Selected Subjects:")
-            .font(.headline)
-            .padding()
-        
-        ForEach(selectedSubjects, id: \.self) { subject in
-            Text(subject)
-                .padding(.leading)
-        }
-        
-        Spacer()
-
-        NavigationLink(destination: CalendarView()) {
-            Image(systemName: "calendar")
-                .imageScale(.large)
-                .padding()
-                .foregroundColor(.blue)
-        }
-        .padding(.trailing)
     }
 }
 
@@ -119,11 +101,10 @@ struct CalendarView: UIViewRepresentable {
     }
 }
 
-
 struct ContentView: View {
     var body: some View {
-        NavigationView{
-            VStack{
+        NavigationView {
+            VStack {
                 NavigationLink(destination: Page1()) {
                     Text("Create a Group")
                         .padding()
@@ -134,11 +115,14 @@ struct ContentView: View {
                         .foregroundColor(.primary)
                 }
             }
+            .padding()
             .navigationTitle("Omu")
         }
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
