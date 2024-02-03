@@ -14,10 +14,13 @@
 		F4C97EA92B6E9D5200C41372 /* omuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97EA82B6E9D5200C41372 /* omuTests.swift */; };
 		F4C97EB32B6E9D5200C41372 /* omuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97EB22B6E9D5200C41372 /* omuUITests.swift */; };
 		F4C97EB52B6E9D5200C41372 /* omuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97EB42B6E9D5200C41372 /* omuUITestsLaunchTests.swift */; };
+		F4D9008F2B6EFC90003A94B3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9008E2B6EFC90003A94B3 /* CalendarView.swift */; };
+		F4D900912B6EFD02003A94B3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D900902B6EFD02003A94B3 /* GameView.swift */; };
+		F4D900932B6EFD98003A94B3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D900922B6EFD98003A94B3 /* DashboardView.swift */; };
 		F4E1E1202B6EC1E600D670FE /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = F4E1E11F2B6EC1E600D670FE /* FSCalendar */; };
-		F4E1E1232B6EEE7200D670FE /* ParserKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4E1E1222B6EEE7200D670FE /* ParserKit */; };
 		F4E1E1282B6EEF0000D670FE /* MathExpression in Frameworks */ = {isa = PBXBuildFile; productRef = F4E1E1272B6EEF0000D670FE /* MathExpression */; };
 		F4E1E12A2B6EF56200D670FE /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */; };
+		F4E1E12E2B6EF85B00D670FE /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1E12D2B6EF85B00D670FE /* CreateGroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,11 @@
 		F4C97EAE2B6E9D5200C41372 /* omuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = omuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C97EB22B6E9D5200C41372 /* omuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omuUITests.swift; sourceTree = "<group>"; };
 		F4C97EB42B6E9D5200C41372 /* omuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4D9008E2B6EFC90003A94B3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		F4D900902B6EFD02003A94B3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F4D900922B6EFD98003A94B3 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		F4E1E12D2B6EF85B00D670FE /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E1E1232B6EEE7200D670FE /* ParserKit in Frameworks */,
 				F4E1E1202B6EC1E600D670FE /* FSCalendar in Frameworks */,
 				F4E1E1282B6EEF0000D670FE /* MathExpression in Frameworks */,
 			);
@@ -107,6 +113,10 @@
 				F4C97E9B2B6E9D5200C41372 /* Assets.xcassets */,
 				F4C97E9D2B6E9D5200C41372 /* Preview Content */,
 				F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */,
+				F4E1E12D2B6EF85B00D670FE /* CreateGroupView.swift */,
+				F4D9008E2B6EFC90003A94B3 /* CalendarView.swift */,
+				F4D900902B6EFD02003A94B3 /* GameView.swift */,
+				F4D900922B6EFD98003A94B3 /* DashboardView.swift */,
 			);
 			path = omu;
 			sourceTree = "<group>";
@@ -154,7 +164,6 @@
 			name = omu;
 			packageProductDependencies = (
 				F4E1E11F2B6EC1E600D670FE /* FSCalendar */,
-				F4E1E1222B6EEE7200D670FE /* ParserKit */,
 				F4E1E1272B6EEF0000D670FE /* MathExpression */,
 			);
 			productName = omu;
@@ -231,7 +240,6 @@
 			mainGroup = F4C97E8B2B6E9D5100C41372;
 			packageReferences = (
 				F4E1E11E2B6EC1E600D670FE /* XCRemoteSwiftPackageReference "FSCalendar" */,
-				F4E1E1212B6EEE7200D670FE /* XCRemoteSwiftPackageReference "Swift-ParserKit" */,
 				F4E1E1262B6EEF0000D670FE /* XCRemoteSwiftPackageReference "MathExpression" */,
 			);
 			productRefGroup = F4C97E952B6E9D5100C41372 /* Products */;
@@ -276,6 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D900912B6EFD02003A94B3 /* GameView.swift in Sources */,
+				F4D9008F2B6EFC90003A94B3 /* CalendarView.swift in Sources */,
+				F4E1E12E2B6EF85B00D670FE /* CreateGroupView.swift in Sources */,
+				F4D900932B6EFD98003A94B3 /* DashboardView.swift in Sources */,
 				F4C97E9A2B6E9D5100C41372 /* ContentView.swift in Sources */,
 				F4E1E12A2B6EF56200D670FE /* LeaderboardView.swift in Sources */,
 				F4C97E982B6E9D5100C41372 /* omuApp.swift in Sources */,
@@ -614,14 +626,6 @@
 				minimumVersion = 2.8.4;
 			};
 		};
-		F4E1E1212B6EEE7200D670FE /* XCRemoteSwiftPackageReference "Swift-ParserKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apotheca/Swift-ParserKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.1;
-			};
-		};
 		F4E1E1262B6EEF0000D670FE /* XCRemoteSwiftPackageReference "MathExpression" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/peredaniel/MathExpression";
@@ -637,11 +641,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4E1E11E2B6EC1E600D670FE /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
-		};
-		F4E1E1222B6EEE7200D670FE /* ParserKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4E1E1212B6EEE7200D670FE /* XCRemoteSwiftPackageReference "Swift-ParserKit" */;
-			productName = ParserKit;
 		};
 		F4E1E1272B6EEF0000D670FE /* MathExpression */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -7,7 +7,6 @@ struct LeaderboardView: View {
                 .font(.largeTitle)
                 .padding()
 
-            // You can display fake leaderboard data here
             LeaderboardRow(name: "🥇Memi", time: "5 seconds")
             LeaderboardRow(name: "🥈Scott", time: "42 seconds")
             LeaderboardRow(name: "🥉Tommy", time: "50 seconds")
@@ -25,12 +24,10 @@ struct LeaderboardRow: View {
     var body: some View {
         HStack {
             Text(name)
-//                .padding(.trailing) // Adjust padding here
             Spacer()
             Text(time)
-//                .padding(.leading) // Adjust padding here
         }
-        .padding() // Adjust vertical padding here
+        .padding()
     }
 }
 
