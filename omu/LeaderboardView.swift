@@ -8,12 +8,12 @@ struct LeaderboardView: View {
                 .padding()
 
             // You can display fake leaderboard data here
-            LeaderboardRow(name: "Memi", time: "5 seconds")
-            LeaderboardRow(name: "Scott", time: "42 seconds")
-            LeaderboardRow(name: "Tommy", time: "50 seconds")
+            LeaderboardRow(name: "🥇Memi", time: "5 seconds")
+            LeaderboardRow(name: "🥈Scott", time: "42 seconds")
+            LeaderboardRow(name: "🥉Tommy", time: "50 seconds")
             LeaderboardRow(name: "Jerome", time: "55 seconds")
-            LeaderboardRow(name: "Sonny", time: "60 seconds")
-            LeaderboardRow(name: "Sonny", time: "FAIL")
+            LeaderboardRow(name: "Sonny", time: "59 seconds")
+            LeaderboardRow(name: "Hoang", time: "FAIL")
         }
     }
 }
@@ -25,12 +25,12 @@ struct LeaderboardRow: View {
     var body: some View {
         HStack {
             Text(name)
-                .padding(.trailing) // Adjust padding here
+//                .padding(.trailing) // Adjust padding here
             Spacer()
             Text(time)
-                .padding(.leading) // Adjust padding here
+//                .padding(.leading) // Adjust padding here
         }
-        .padding(.vertical, 8) // Adjust vertical padding here
+        .padding() // Adjust vertical padding here
     }
 }
 

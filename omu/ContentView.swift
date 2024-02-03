@@ -83,6 +83,7 @@ struct CountdownGameView: View {
     @State private var result: String = ""
     @State private var showAlert: Bool = false
     @State private var alertCountdown: Int = 60
+    @State private var navigateToLeaderboard: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
@@ -150,8 +151,13 @@ struct CountdownGameView: View {
                 Alert(
                     title: Text("Congratulations!"),
                     message: Text("You solved it in \(60 - countdown) seconds!"),
-                    dismissButton: .default(Text("OK"))
+                    dismissButton: .default(Text("OK"), action: {
+                        navigateToLeaderboard = true
+                    })
                 )
+            }
+            .sheet(isPresented: $navigateToLeaderboard) {
+                LeaderboardView()
             }
 
 
