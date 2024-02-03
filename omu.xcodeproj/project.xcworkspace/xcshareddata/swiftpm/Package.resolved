@@ -8,6 +8,33 @@
         "revision" : "0fbdec5172fccb90f707472eeaea4ffe095278f6",
         "version" : "2.8.4"
       }
+    },
+    {
+      "identity" : "mathexpression",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/peredaniel/MathExpression",
+      "state" : {
+        "revision" : "cd4bff668db45e2283c263da7cd67fe76d7d3106",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "swift-functorkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apotheca/Swift-FunctorKit",
+      "state" : {
+        "revision" : "a41831627181a3f9d048767c387128e407eec4d8",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "swift-parserkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apotheca/Swift-ParserKit",
+      "state" : {
+        "revision" : "08dbe79d3f49f8466ad5d041191c0737f3a4cd05",
+        "version" : "0.2.1"
+      }
     }
   ],
   "version" : 2

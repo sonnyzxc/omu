@@ -1,12 +1,13 @@
 import SwiftUI
 import FSCalendar
+import MathExpression
 
 struct Page1: View {
     @State private var groupID: String = ""
-    @State private var selectedSubjects: [String] = []
     @State private var isSubmitTapped: Bool = false
 
     var body: some View {
+        
         VStack {
             TextField(
                 "Group ID",
@@ -18,8 +19,6 @@ struct Page1: View {
             .frame(width: 200)
 
             Button("Submit") {
-                // Handle the action when the submit button is tapped
-                // You can add your logic here
                 isSubmitTapped = true
             }
             .padding()
@@ -30,7 +29,7 @@ struct Page1: View {
             .frame(width: 200)
             .disabled(groupID.isEmpty)
 
-            NavigationLink(destination: Page2(groupID: groupID, selectedSubjects: selectedSubjects), isActive: $isSubmitTapped) {
+            NavigationLink(destination: Dashboard(groupID: groupID), isActive: $isSubmitTapped) {
                 EmptyView()
             }
         }
@@ -39,10 +38,9 @@ struct Page1: View {
     }
 }
 
-struct Page2: View {
+struct Dashboard: View {
+    @State private var isStartButtonTapped: Bool = false
     var groupID: String
-    var selectedSubjects: [String]
-    let triviaOfTheDay = "Learn to cook chicken pesto pasta!"
 
     var body: some View {
         VStack {
@@ -52,12 +50,17 @@ struct Page2: View {
             
             Spacer()
 
-            Text("Task of the Day:")
-                .font(.headline)
-                .padding()
-
-            Text(triviaOfTheDay)
-                .padding(.leading)
+            Button("Start") {
+                isStartButtonTapped = true
+            }
+            .frame(width: 150, height: 150)
+            .background(
+                NavigationLink("", destination: CountdownGameView(), isActive: $isStartButtonTapped)
+            )
+            .overlay(
+                NavigationLink("", destination: CountdownGameView(), isActive: $isStartButtonTapped)
+                    .frame(width: 0, height: 0)
+            )
 
             Spacer()
 
@@ -72,6 +75,112 @@ struct Page2: View {
         .navigationTitle("Dashboard")
     }
 }
+
+struct CountdownGameView: View {
+    @State private var countdown: Int = 60
+    @State private var isGameRunning: Bool = true
+    @State private var expression: String = ""
+    @State private var result: String = ""
+    @State private var showAlert: Bool = false
+    @State private var alertCountdown: Int = 60
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
+    var body: some View {
+        VStack {
+            Text("Countdown Game Show")
+                .font(.headline)
+                .padding()
+            
+            Text("598")
+                .font(.system(size: 50, weight: .bold))
+            
+            HStack(spacing: 30) {
+                ForEach(["9", "4", "2", "1", "9", "5"], id: \.self) { number in
+                    Button(action: {
+                        expression += number + " "
+                    }) {
+                        Text(number)
+                            .font(.system(size: 40))
+                    }
+                }
+            }
+            
+            HStack(spacing: 30) {
+                ForEach(["+", "-", "*", "/", "(", ")"], id: \.self) { ops in
+                    Button(action: {
+                        expression += ops + " "
+                    }) {
+                        Text(ops)
+                            .font(.system(size: 40))
+                    }
+                }
+            }
+            
+            HStack(spacing: 30) {
+                ForEach(["DEL"], id: \.self) { ops in
+                    Button(action: {
+                        expression = String(expression.dropLast(2))
+                    }) {
+                        Text(ops)
+                            .font(.system(size: 40))
+                    }
+                }
+            }
+            
+            Text("\(expression)")
+                .font(.system(size: 20))
+                .padding()
+            
+            Spacer()
+            
+            Button("Submit") {
+                do {
+                    let expression = try MathExpression("\(expression)")
+                    let value = expression.evaluate()
+                    print("\(expression) = \(value)")
+                    if value == 90 { // CHANGE LATER
+                        print("success!")
+                        showAlert = true
+                    }
+                } catch {
+                    print("Error evaluating math expression: \(error)")
+                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Congratulations!"),
+                    message: Text("You solved it in \(60 - countdown) seconds!"),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+
+
+            Text("Time Remaining: \(countdown) seconds")
+                .foregroundColor(countdown <= 10 ? .red : .primary)
+                .font(.subheadline)
+                .padding()
+
+            if !isGameRunning {
+                Text("Game Over!")
+                    .foregroundColor(.red)
+                    .font(.headline)
+                    .padding()
+            }
+        }
+        .onReceive(timer) { _ in
+            if isGameRunning {
+                if countdown > 0 {
+                    if !showAlert {
+                        countdown -= 1
+                    }
+                } else {
+                    isGameRunning = false
+                }
+            }
+        }
+    }
+}
+
 
 struct CalendarView: UIViewRepresentable {
     typealias UIViewType = FSCalendar
