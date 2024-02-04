@@ -2,17 +2,17 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var isStartButtonTapped: Bool = false
-    var groupID: String
+    var playerName: String
 
     var body: some View {
         VStack {
-            Text("Group ID: \(groupID)")
+            Text("Username: \(playerName)")
                 .font(.headline)
                 .padding()
             
             Spacer()
 
-            Button("Start") {
+            Button("Start Game") {
                 isStartButtonTapped = true
             }
             .frame(width: 150, height: 150)
@@ -35,5 +35,6 @@ struct DashboardView: View {
             .padding(.trailing)
         }
         .navigationTitle("Dashboard")
+        .navigationBarBackButtonHidden(true)
     }
 }

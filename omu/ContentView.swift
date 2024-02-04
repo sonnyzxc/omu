@@ -4,18 +4,21 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: CreateGroupView()) {
-                    Text("Create a Group")
+                Image("Image")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .padding()
+                
+                NavigationLink(destination: CreateUserView()) {
+                    Text("Create an Account")
                         .padding()
-                        .background(.regularMaterial)
-                        .colorScheme(.dark)
-                        .cornerRadius(12)
-                        .font(.largeTitle.bold())
-                        .foregroundColor(.primary)
+                        .background(.blue)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
                 }
             }
             .padding()
-            .navigationTitle("Omu")
         }
     }
 }

@@ -1,15 +1,14 @@
 import SwiftUI
 
-struct CreateGroupView: View {
-    @State private var groupID: String = ""
+struct CreateUserView: View {
+    @State private var playerName: String = ""
     @State private var isSubmitTapped: Bool = false
 
     var body: some View {
-        
         VStack {
             TextField(
-                "Group ID",
-                text: $groupID
+                "Username",
+                text: $playerName
             )
             .disableAutocorrection(true)
             .textFieldStyle(.roundedBorder)
@@ -25,19 +24,19 @@ struct CreateGroupView: View {
             .foregroundColor(.white)
             .cornerRadius(8)
             .frame(width: 200)
-            .disabled(groupID.isEmpty)
+            .disabled(playerName.isEmpty)
 
-            NavigationLink(destination: DashboardView(groupID: groupID), isActive: $isSubmitTapped) {
+            NavigationLink(destination: DashboardView(playerName: playerName), isActive: $isSubmitTapped) {
                 EmptyView()
             }
         }
         .textFieldStyle(.roundedBorder)
-        .navigationTitle("Create a group")
+//        .navigationTitle("Create a group")
     }
 }
 
-struct CreateGroupView_Previews: PreviewProvider {
+struct CreateUserView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateGroupView()
+        CreateUserView()
     }
 }

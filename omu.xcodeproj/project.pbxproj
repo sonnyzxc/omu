@@ -20,7 +20,7 @@
 		F4E1E1202B6EC1E600D670FE /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = F4E1E11F2B6EC1E600D670FE /* FSCalendar */; };
 		F4E1E1282B6EEF0000D670FE /* MathExpression in Frameworks */ = {isa = PBXBuildFile; productRef = F4E1E1272B6EEF0000D670FE /* MathExpression */; };
 		F4E1E12A2B6EF56200D670FE /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */; };
-		F4E1E12E2B6EF85B00D670FE /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1E12D2B6EF85B00D670FE /* CreateGroupView.swift */; };
+		F4E1E12E2B6EF85B00D670FE /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1E12D2B6EF85B00D670FE /* CreateUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		F4D900902B6EFD02003A94B3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		F4D900922B6EFD98003A94B3 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
-		F4E1E12D2B6EF85B00D670FE /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
+		F4E1E12D2B6EF85B00D670FE /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				F4C97E9B2B6E9D5200C41372 /* Assets.xcassets */,
 				F4C97E9D2B6E9D5200C41372 /* Preview Content */,
 				F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */,
-				F4E1E12D2B6EF85B00D670FE /* CreateGroupView.swift */,
+				F4E1E12D2B6EF85B00D670FE /* CreateUserView.swift */,
 				F4D9008E2B6EFC90003A94B3 /* CalendarView.swift */,
 				F4D900902B6EFD02003A94B3 /* GameView.swift */,
 				F4D900922B6EFD98003A94B3 /* DashboardView.swift */,
@@ -286,7 +286,7 @@
 			files = (
 				F4D900912B6EFD02003A94B3 /* GameView.swift in Sources */,
 				F4D9008F2B6EFC90003A94B3 /* CalendarView.swift in Sources */,
-				F4E1E12E2B6EF85B00D670FE /* CreateGroupView.swift in Sources */,
+				F4E1E12E2B6EF85B00D670FE /* CreateUserView.swift in Sources */,
 				F4D900932B6EFD98003A94B3 /* DashboardView.swift in Sources */,
 				F4C97E9A2B6E9D5100C41372 /* ContentView.swift in Sources */,
 				F4E1E12A2B6EF56200D670FE /* LeaderboardView.swift in Sources */,
@@ -379,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -436,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -462,6 +462,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,6 +492,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

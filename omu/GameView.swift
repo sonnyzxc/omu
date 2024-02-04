@@ -10,10 +10,12 @@ struct GameView: View {
     @State private var alertCountdown: Int = 60
     @State private var navigateToLeaderboard: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    @State private var timeIsUp: Bool = false
 
     var body: some View {
         VStack {
-            Text("Countdown Game Show")
+            Text("\(Text(Date(), style: .date))")
                 .font(.headline)
                 .padding()
             
@@ -98,6 +100,7 @@ struct GameView: View {
                     .padding()
             }
         }
+        .navigationBarBackButtonHidden(true)
         .onReceive(timer) { _ in
             if isGameRunning {
                 if countdown > 0 {
@@ -106,8 +109,21 @@ struct GameView: View {
                     }
                 } else {
                     isGameRunning = false
+                    timeIsUp = true
                 }
             }
+        }
+        .alert(isPresented: Binding<Bool>(
+            get: { timeIsUp && !showAlert },
+            set: { _ in timeIsUp = false }
+        )) {
+            Alert(
+                title: Text("Game Over"),
+                message: Text("Time's up! You didn't solve it in time."),
+                dismissButton: .default(Text("OK"), action: {
+                    navigateToLeaderboard = true
+                })
+            )
         }
     }
 }
