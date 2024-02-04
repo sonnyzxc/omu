@@ -17,7 +17,13 @@
 		F4C97EA92B6E9D5200C41372 /* omuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97EA82B6E9D5200C41372 /* omuTests.swift */; };
 		F4C97EB32B6E9D5200C41372 /* omuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97EB22B6E9D5200C41372 /* omuUITests.swift */; };
 		F4C97EB52B6E9D5200C41372 /* omuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97EB42B6E9D5200C41372 /* omuUITestsLaunchTests.swift */; };
+		F4D9008F2B6EFC90003A94B3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9008E2B6EFC90003A94B3 /* CalendarView.swift */; };
+		F4D900912B6EFD02003A94B3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D900902B6EFD02003A94B3 /* GameView.swift */; };
+		F4D900932B6EFD98003A94B3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D900922B6EFD98003A94B3 /* DashboardView.swift */; };
 		F4E1E1202B6EC1E600D670FE /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = F4E1E11F2B6EC1E600D670FE /* FSCalendar */; };
+		F4E1E1282B6EEF0000D670FE /* MathExpression in Frameworks */ = {isa = PBXBuildFile; productRef = F4E1E1272B6EEF0000D670FE /* MathExpression */; };
+		F4E1E12A2B6EF56200D670FE /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */; };
+		F4E1E12E2B6EF85B00D670FE /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1E12D2B6EF85B00D670FE /* CreateUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,11 @@
 		F4C97EAE2B6E9D5200C41372 /* omuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = omuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C97EB22B6E9D5200C41372 /* omuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omuUITests.swift; sourceTree = "<group>"; };
 		F4C97EB42B6E9D5200C41372 /* omuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4D9008E2B6EFC90003A94B3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		F4D900902B6EFD02003A94B3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F4D900922B6EFD98003A94B3 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		F4E1E12D2B6EF85B00D670FE /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E1E1202B6EC1E600D670FE /* FSCalendar in Frameworks */,
+				F4E1E1282B6EEF0000D670FE /* MathExpression in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +129,11 @@
 				F4C97E992B6E9D5100C41372 /* ContentView.swift */,
 				F4C97E9B2B6E9D5200C41372 /* Assets.xcassets */,
 				F4C97E9D2B6E9D5200C41372 /* Preview Content */,
+				F4E1E1292B6EF56200D670FE /* LeaderboardView.swift */,
+				F4E1E12D2B6EF85B00D670FE /* CreateUserView.swift */,
+				F4D9008E2B6EFC90003A94B3 /* CalendarView.swift */,
+				F4D900902B6EFD02003A94B3 /* GameView.swift */,
+				F4D900922B6EFD98003A94B3 /* DashboardView.swift */,
 			);
 			path = omu;
 			sourceTree = "<group>";
@@ -164,6 +181,7 @@
 			name = omu;
 			packageProductDependencies = (
 				F4E1E11F2B6EC1E600D670FE /* FSCalendar */,
+				F4E1E1272B6EEF0000D670FE /* MathExpression */,
 			);
 			productName = omu;
 			productReference = F4C97E942B6E9D5100C41372 /* omu.app */;
@@ -239,6 +257,7 @@
 			mainGroup = F4C97E8B2B6E9D5100C41372;
 			packageReferences = (
 				F4E1E11E2B6EC1E600D670FE /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				F4E1E1262B6EEF0000D670FE /* XCRemoteSwiftPackageReference "MathExpression" */,
 			);
 			productRefGroup = F4C97E952B6E9D5100C41372 /* Products */;
 			projectDirPath = "";
@@ -282,7 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D900912B6EFD02003A94B3 /* GameView.swift in Sources */,
+				F4D9008F2B6EFC90003A94B3 /* CalendarView.swift in Sources */,
+				F4E1E12E2B6EF85B00D670FE /* CreateUserView.swift in Sources */,
+				F4D900932B6EFD98003A94B3 /* DashboardView.swift in Sources */,
 				F4C97E9A2B6E9D5100C41372 /* ContentView.swift in Sources */,
+				F4E1E12A2B6EF56200D670FE /* LeaderboardView.swift in Sources */,
 				B8C284652B6EF43100E30290 /* MarketPlace.swift in Sources */,
 				F4C97E982B6E9D5100C41372 /* omuApp.swift in Sources */,
 				B89C39692B6F0CC800E79B95 /* WardrobeView.swift in Sources */,
@@ -375,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -432,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -458,6 +482,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +512,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -622,6 +648,14 @@
 				minimumVersion = 2.8.4;
 			};
 		};
+		F4E1E1262B6EEF0000D670FE /* XCRemoteSwiftPackageReference "MathExpression" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/peredaniel/MathExpression";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -629,6 +663,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4E1E11E2B6EC1E600D670FE /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		F4E1E1272B6EEF0000D670FE /* MathExpression */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E1E1262B6EEF0000D670FE /* XCRemoteSwiftPackageReference "MathExpression" */;
+			productName = MathExpression;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
