@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B89C39692B6F0CC800E79B95 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89C39682B6F0CC800E79B95 /* WardrobeView.swift */; };
 		B8C284042B6EA8C200E30290 /* AvatarCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C284032B6EA8C200E30290 /* AvatarCreationView.swift */; };
+		B8C284652B6EF43100E30290 /* MarketPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C284642B6EF43100E30290 /* MarketPlace.swift */; };
 		F4C97E982B6E9D5100C41372 /* omuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97E972B6E9D5100C41372 /* omuApp.swift */; };
 		F4C97E9A2B6E9D5100C41372 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C97E992B6E9D5100C41372 /* ContentView.swift */; };
 		F4C97E9C2B6E9D5200C41372 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C97E9B2B6E9D5200C41372 /* Assets.xcassets */; };
@@ -36,7 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B89C39682B6F0CC800E79B95 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
 		B8C284032B6EA8C200E30290 /* AvatarCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCreationView.swift; sourceTree = "<group>"; };
+		B8C284642B6EF43100E30290 /* MarketPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlace.swift; sourceTree = "<group>"; };
 		F4C97E942B6E9D5100C41372 /* omu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C97E972B6E9D5100C41372 /* omuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omuApp.swift; sourceTree = "<group>"; };
 		F4C97E992B6E9D5100C41372 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				B8C284032B6EA8C200E30290 /* AvatarCreationView.swift */,
+				B8C284642B6EF43100E30290 /* MarketPlace.swift */,
+				B89C39682B6F0CC800E79B95 /* WardrobeView.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -277,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C97E9A2B6E9D5100C41372 /* ContentView.swift in Sources */,
+				B8C284652B6EF43100E30290 /* MarketPlace.swift in Sources */,
 				F4C97E982B6E9D5100C41372 /* omuApp.swift in Sources */,
+				B89C39692B6F0CC800E79B95 /* WardrobeView.swift in Sources */,
 				B8C284042B6EA8C200E30290 /* AvatarCreationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
