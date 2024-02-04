@@ -1,37 +1,46 @@
-//
-//  WardrobeView.swift
-//  omu
-//
-//  Created by Nutchalai Sawatyanon on 04/02/2024.
-//
-
 import SwiftUI
+import Combine
 
 struct WardrobeView: View {
     var boughtClothes: [ClothingItem]
-        
-        var body: some View {
-            NavigationView {
-                List(boughtClothes) { item in
-                    HStack {
-                        Image(item.imageName)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100)
-                            .cornerRadius(10)
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text("$\(item.price, specifier: "%.2f")")
-                                .font(.subheadline)
-                        }
-                    }
-                }
-                .navigationTitle("My Wardrobe")
-            }
-        }
-}
+    var gender: String
+    @State private var avatarImageName: String
+    
+    init(boughtClothes: [ClothingItem], gender: String) {
+        self.gender = gender
+        self.boughtClothes = boughtClothes
+        // Initialize the @State variable based on the gender argument
+        _avatarImageName = State(initialValue: gender)
+    }
 
-#Preview {
-    WardrobeView()
+    var body: some View {
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack {
+                    ForEach(boughtClothes) { item in
+                        HStack {
+                            Image(item.imageName) // Placeholder for the item image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200, height: 200)
+                                .onTapGesture {
+                                    self.avatarImageName = "\(self.gender)-\(item.imageName)"
+                                }
+                        }
+                        .padding()
+                    }
+                }.padding(.bottom, 300)
+            }
+
+            // Fixed avatar image at the bottom
+            Image(avatarImageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 400, height: 400)
+                .padding(.bottom, -40) // Adjusted to avoid overlap
+        }
+        .navigationTitle("My Wardrobe")
+        .navigationBarTitleDisplayMode(.large)
+
+    }
 }

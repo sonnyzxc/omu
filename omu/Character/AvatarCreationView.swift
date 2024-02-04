@@ -18,42 +18,20 @@ struct AvatarCreationView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
-                .onChange(of: selectedGender) { _ in createAvatar() }
                 
-                ZStack {
-                    if isLoading || avatarImage == nil {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(.gray)
-                            .frame(width: 300, height: 300)
-                            .opacity(0) // Invisible, but occupies space
-                    }
-                    
-                    if isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .scaleEffect(1.5)
-                    } else if let avatarImage = avatarImage {
-                        Image(uiImage: avatarImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 300, height: 300)
-                    }
-                }
-                .frame(width: 300, height: 300)
-                .transition(.opacity.combined(with: .scale))
+                Image(selectedGender).resizable()
+                                    .scaledToFit()
+                                    .frame(width: 300, height: 300)
+                
                 
                 // Continue button - enabled when avatarImage is not nil
-                if let _ = avatarImage {
-                    NavigationLink(destination: NextView(), isActive: $isContinueButtonEnabled) {
-                        Button("Continue") {
-                            isContinueButtonEnabled = true
-                        }.buttonStyle(.bordered)
-                        .controlSize(.large)
-                        .buttonBorderShape(.roundedRectangle)
-                        .disabled(avatarImage == nil) // Disable the button if the avatar image hasn't loaded
-                    }
+                NavigationLink(destination: NextView(), isActive: $isContinueButtonEnabled) {
+                    Button("Continue") {
+                        isContinueButtonEnabled = true
+                    }.buttonStyle(.bordered)
+                    .controlSize(.large)
+                    .buttonBorderShape(.roundedRectangle)
+                  
                 }
             }
             .navigationBarTitle("Customize Avatar", displayMode: .inline)
@@ -62,29 +40,11 @@ struct AvatarCreationView: View {
     }
     
     func createAvatar() {
-        isLoading = true
         
-        let avatarURL: String = selectedGender == "Female" ?
-            "https://models.readyplayer.me/65be905d71a2932853331799.png" :
-            "https://models.readyplayer.me/65be95f07624741a0cd47a08.png"
-        
-        guard let url = URL(string: avatarURL) else {
-            print("Invalid URL")
-            isLoading = false
-            return
-        }
-
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            DispatchQueue.main.async {
-                isLoading = false
-                guard let data = data, error == nil, let image = UIImage(data: data) else {
-                    print("Error fetching avatar: \(error?.localizedDescription ?? "Unknown error")")
-                    return
-                }
-                self.avatarImage = image
-            }
-        }
-        task.resume()
+        Image(selectedGender).resizable()
+            .scaledToFit()
+            .frame(width: 400, height: 400)
+    
     }
 }
 
